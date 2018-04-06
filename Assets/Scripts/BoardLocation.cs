@@ -19,4 +19,10 @@ public abstract class BoardLocation : MonoBehaviour
             gameObject.transform.parent.Find((currentSpace - 1).ToString()).GetComponent<BoardLocation>() : 
             gameObject.transform.parent.Find("39").GetComponent<BoardLocation>();
     }
+    
+    // Player instances call this when they pass by this space.  
+    public abstract void PassBy(Player player);
+    
+    // Player instances call this when they land on this space.  
+    public abstract void InteractWith(Player player);
 }
