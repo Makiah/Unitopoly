@@ -7,7 +7,7 @@ public abstract class BoardLocation : MonoBehaviour
 {
     [HideInInspector] public BoardLocation preceding, next;
     
-    private void Start()
+    private void Awake()
     {
         int currentSpace = Int32.Parse(gameObject.name);
         

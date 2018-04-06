@@ -6,11 +6,11 @@ public class Property : BoardLocation
 {
     public override void PassBy(Player player)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Passed by property");
     }
 
     public override void LandOn(Player player)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Landed on property");
     }
 }

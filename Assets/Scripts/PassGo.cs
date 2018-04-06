@@ -6,11 +6,9 @@ public class PassGo : BoardLocation
 {
     public override void PassBy(Player player)
     {
-        throw new System.NotImplementedException();
     }
 
     public override void LandOn(Player player)
     {
-        throw new System.NotImplementedException();
     }
 }

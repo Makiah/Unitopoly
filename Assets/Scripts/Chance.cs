@@ -6,11 +6,11 @@ public class Chance : BoardLocation
 {
     public override void PassBy(Player player)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Passed by Chance");
     }
 
     public override void LandOn(Player player)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Landed on Chance");
     }
 }
