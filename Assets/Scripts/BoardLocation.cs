@@ -5,17 +5,17 @@ using UnityEngine;
 
 public abstract class BoardLocation : MonoBehaviour
 {
-    private BoardLocation previousSpace, nextSpace;
+    [HideInInspector] public BoardLocation preceding, next;
     
     private void Start()
     {
         int currentSpace = Int32.Parse(gameObject.name);
         
-        nextSpace = currentSpace < 39 ? 
+        next = currentSpace < 39 ? 
             gameObject.transform.parent.Find((currentSpace + 1).ToString()).GetComponent<BoardLocation>() : 
             gameObject.transform.parent.Find("0").GetComponent<BoardLocation>();
         
-        previousSpace = currentSpace > 0 ? 
+        preceding = currentSpace > 0 ? 
             gameObject.transform.parent.Find((currentSpace - 1).ToString()).GetComponent<BoardLocation>() : 
             gameObject.transform.parent.Find("39").GetComponent<BoardLocation>();
     }
@@ -24,5 +24,5 @@ public abstract class BoardLocation : MonoBehaviour
     public abstract void PassBy(Player player);
     
     // Player instances call this when they land on this space.  
-    public abstract void InteractWith(Player player);
+    public abstract void LandOn(Player player);
 }

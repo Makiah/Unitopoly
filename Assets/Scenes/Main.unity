@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 214810204}
   - component: {fileID: 214810203}
   - component: {fileID: 214810202}
+  - component: {fileID: 214810205}
   m_Layer: 0
   m_Name: 0
   m_TagString: Untagged
@@ -585,6 +586,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 214810200}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &214810205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 214810200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cccf0bd5ec44b99b30c705c9a1703e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preceding: {fileID: 0}
+  next: {fileID: 0}
 --- !u!1 &240120984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,7 +2462,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4125276569269284, guid: d726529b54fc54d14afc3e8a1aa22478, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.28
+      value: 5.207
       objectReference: {fileID: 0}
     - target: {fileID: 4125276569269284, guid: d726529b54fc54d14afc3e8a1aa22478, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2456,7 +2470,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4125276569269284, guid: d726529b54fc54d14afc3e8a1aa22478, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 5.189
+      value: 5.207
       objectReference: {fileID: 0}
     - target: {fileID: 4125276569269284, guid: d726529b54fc54d14afc3e8a1aa22478, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2484,19 +2498,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4125276569269284, guid: d726529b54fc54d14afc3e8a1aa22478, type: 2}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4125276569269284, guid: d726529b54fc54d14afc3e8a1aa22478, type: 2}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4125276569269284, guid: d726529b54fc54d14afc3e8a1aa22478, type: 2}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d726529b54fc54d14afc3e8a1aa22478, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1256293949 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1841651010534694, guid: d726529b54fc54d14afc3e8a1aa22478,
+    type: 2}
+  m_PrefabInternal: {fileID: 1256293948}
+--- !u!114 &1256293950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256293949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f022d499667e4046bdba74ed3275601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSpace: {fileID: 214810205}
 --- !u!1 &1308763199
 GameObject:
   m_ObjectHideFlags: 0

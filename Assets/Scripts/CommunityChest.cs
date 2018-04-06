@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InJail : BoardLocation 
+public class CommunityChest : BoardLocation 
 {
     public override void PassBy(Player player)
     {
