@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreeParking : BoardLocation 
+public class SuperTax : BoardLocation 
 {
     public override void PassBy(Player player)
     {

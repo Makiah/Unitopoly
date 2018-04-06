@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Money
+    private float accountBalance;
+    
     [SerializeField] private BoardLocation currentSpace;
 
     void Start()
     {
-        StartCoroutine(MoveSpaces(8));
+        StartCoroutine(MoveSpaces(UnityEngine.Random.Range(7, 25)));
     }
     
     public IEnumerator MoveSpaces(int spaces)
@@ -23,7 +26,7 @@ public class Player : MonoBehaviour
             
             currentSpace.PassBy(this);
             
-            float timeForJump = .75f;
+            float timeForJump = .9f * (Mathf.Sqrt((i * 1.0f) / spaces + .8f) - .35f);
             float startTime = Time.time;
 
             Vector3 startPosition = currentSpace.gameObject.transform.position;
@@ -33,11 +36,12 @@ public class Player : MonoBehaviour
             desiredDisplacement.y = 0;
 
             float progressionCoefficient = 0;
-            while (progressionCoefficient < 1)
+            while (progressionCoefficient <= .98f)
             {
                 progressionCoefficient = (Time.time - startTime) / timeForJump;
+                
                 Vector3 newPosition = startPosition + desiredDisplacement * progressionCoefficient;
-                newPosition.y = (float)(-2 * Math.Pow(progressionCoefficient - 0.5, 2) + 0.5);
+                newPosition.y = -1 * Mathf.Pow(progressionCoefficient - 0.5f, 2) + 0.25f;
 
                 transform.position = newPosition;
 
@@ -47,6 +51,27 @@ public class Player : MonoBehaviour
             // Onto the next space!
             currentSpace = targetSpace;
             transform.position = currentSpace.transform.position;
+            
+            // Rotate if we're on a corner space.  
+            if (currentSpace is PassGo || currentSpace is GoToJail || currentSpace is InJail ||
+                currentSpace is FreeParking)
+            {
+                progressionCoefficient = 0;
+                startTime = Time.time;
+                float timeForRotate = 1f;
+                float startAngle = transform.eulerAngles.y;
+                
+                while (progressionCoefficient <= .98f)
+                {
+                    progressionCoefficient = (Time.time - startTime) / timeForRotate;
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, startAngle + 90 * progressionCoefficient, transform.eulerAngles.z);
+
+                    yield return null;
+                }
+                
+                // Finalize rotation.  
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, startAngle + 90, transform.eulerAngles.z);
+            }
         }
         
         // Tell the space we ended on that we landed on it.  
