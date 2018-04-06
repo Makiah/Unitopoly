@@ -1,2 +1,1 @@
 # Unitopoly
-🎩  Monopoly in Unity
