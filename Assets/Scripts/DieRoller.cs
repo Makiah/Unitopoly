@@ -8,7 +8,11 @@ public class DieRoller : MonoBehaviour
 
     private Vector3[] initialDiePositions;
 
-    [SerializeField] private bool testRepeatedDieRolls = false;
+    private int[] dieRollResults;
+    public int[] GetDieRollResults()
+    {
+        return dieRollResults;
+    }
     
     void Awake()
     {
@@ -16,45 +20,22 @@ public class DieRoller : MonoBehaviour
         
         initialDiePositions = new Vector3[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
-            initialDiePositions[i] = transform.GetChild(i).transform.position;
-    }
-
-    void Start()
-    {
-        if (testRepeatedDieRolls)
-            StartCoroutine(TestDieRollsRepeated());
-    }
-
-    private IEnumerator TestDieRollsRepeated()
-    {
-        for (int i = 0; i < 16; i++)
         {
-            yield return RollDie();
+            initialDiePositions[i] = transform.GetChild(i).transform.position;
+            transform.GetChild(i).gameObject.SetActive(false);
         }
-    }
-
-    public int GetDieRollValue()
-    {
-        return 0;
-    }
-
-    public void ResetDie()
-    {
-        for (int i = 0; i < transform.childCount; i++)
-            transform.GetChild(i).transform.position = initialDiePositions[i];
-    }
-
-    public void RandomizeDieRotations()
-    {
-        for (int i = 0; i < transform.childCount; i++)
-            transform.GetChild(i).transform.rotation = UnityEngine.Random.rotation;
     }
 
     public IEnumerator RollDie()
     {
-        ResetDie();
-        RandomizeDieRotations();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(true);
+            transform.GetChild(i).transform.position = initialDiePositions[i];
+            transform.GetChild(i).transform.rotation = UnityEngine.Random.rotation;
+        }
 
+        // Let them start falling.  
         yield return new WaitForSeconds(2);
         
         while (true)
@@ -77,14 +58,13 @@ public class DieRoller : MonoBehaviour
                 break;
         }
 
-        string dieVals = "";
+        // Determine die results.  
         Die[] dies = gameObject.GetComponentsInChildren<Die>();
+        dieRollResults = new int[dies.Length];
         
-        foreach (Die die in dies)
-        {
-            dieVals = dieVals + " " + die.GetDieValue();
-        }
+        for (int i = 0; i < dies.Length; i++)
+            dieRollResults[i] = dies[i].GetDieValue();
         
-        Debug.Log("Got" + dieVals);
+        Debug.Log("Got " + dieRollResults);
     }
 }

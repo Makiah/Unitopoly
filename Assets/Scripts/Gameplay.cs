@@ -55,9 +55,21 @@ public class Gameplay : MonoBehaviour
     private IEnumerator PlayGame()
     {
         yield return CameraController.instance.LerpToViewBoardTarget();
-
-        yield return players[0].MoveSpaces(UnityEngine.Random.Range(12, 16));
         
-        yield return players[1].MoveSpaces(UnityEngine.Random.Range(20, 30));
+        // Simulate taking 16 turns.  
+        for (int i = 0; i < 16; i++)
+        {
+            foreach (Player player in players)
+            {
+                yield return DieRoller.instance.RollDie();
+                int[] dieRollResults = DieRoller.instance.GetDieRollResults();
+                
+                int total = 0;
+                for (int dieCount = 0; dieCount < dieRollResults.Length; dieCount++)
+                    total += dieRollResults[dieCount];
+
+                yield return player.MoveSpaces(total);
+            }
+        }
     }
 }
