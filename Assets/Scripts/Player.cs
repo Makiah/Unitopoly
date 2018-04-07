@@ -16,6 +16,12 @@ public class Player : MonoBehaviour
     {
         this.isAI = isAI;
     }
+
+    private BalanceTracker balanceTracker;
+    public void SetBalanceTracker(BalanceTracker balanceTracker)
+    {
+        this.balanceTracker = balanceTracker;
+    }
     
     // Money
     private int accountBalance = 1500;
@@ -23,6 +29,7 @@ public class Player : MonoBehaviour
     public void AdjustBalanceBy(int balance)
     {
         accountBalance += balance;
+        balanceTracker.UpdateBalance(accountBalance);
     }
 
     public int GetBalance()

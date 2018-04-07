@@ -20,6 +20,7 @@ public class Property : BoardLocation
     public override IEnumerator LandOn(Player player)
     {
         Debug.Log("Landed on property");
+        player.AdjustBalanceBy(-propertyPurchasePrice);
         yield return null;
     }
 }

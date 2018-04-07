@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Gameplay : MonoBehaviour
@@ -10,6 +11,8 @@ public class Gameplay : MonoBehaviour
     private List<Player> players;
 
     [SerializeField] private GameObject playerPrefab;
+
+    [SerializeField] private BalanceTracker[] balanceTrackers;
 
     void Awake()
     {
@@ -45,6 +48,11 @@ public class Gameplay : MonoBehaviour
         players.Add(newPlayer);
         
         newPlayer.Initialize();
+        
+        // Give this player a balance tracker.  
+        BalanceTracker balanceTracker = balanceTrackers[players.Count - 1];
+        balanceTracker.gameObject.SetActive(true);
+        newPlayer.SetBalanceTracker(balanceTracker);
     }
 
     public void StartGame()
@@ -63,12 +71,7 @@ public class Gameplay : MonoBehaviour
             {
                 yield return DieRoller.instance.RollDie();
                 int[] dieRollResults = DieRoller.instance.GetDieRollResults();
-                
-                int total = 0;
-                for (int dieCount = 0; dieCount < dieRollResults.Length; dieCount++)
-                    total += dieRollResults[dieCount];
-
-                yield return player.MoveSpaces(total);
+                yield return player.MoveSpaces(dieRollResults.Sum());
             }
         }
     }
