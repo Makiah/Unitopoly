@@ -8,7 +8,8 @@ public class SuperTax : BoardLocation
     {
     }
 
-    public override void LandOn(Player player)
+    public override IEnumerator LandOn(Player player)
     {
+        yield return null;
     }
 }

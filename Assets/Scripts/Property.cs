@@ -9,14 +9,17 @@ public class Property : BoardLocation
     [SerializeField] private int propertyPurchasePrice;
     [SerializeField] private Property[] sameColorProperties;
     [SerializeField] private int[] constructionPrices = new int[5];
+
+    [HideInInspector] public Player ownedBy = null;
     
     public override void PassBy(Player player)
     {
         Debug.Log("Passed by property");
     }
 
-    public override void LandOn(Player player)
+    public override IEnumerator LandOn(Player player)
     {
         Debug.Log("Landed on property");
+        yield return null;
     }
 }

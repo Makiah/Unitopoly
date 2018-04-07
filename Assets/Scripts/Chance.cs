@@ -9,8 +9,10 @@ public class Chance : BoardLocation
         Debug.Log("Passed by Chance");
     }
 
-    public override void LandOn(Player player)
+    public override IEnumerator LandOn(Player player)
     {
         Debug.Log("Landed on Chance");
+
+        yield return null;
     }
 }

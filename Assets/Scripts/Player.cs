@@ -5,14 +5,36 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Money
-    private float accountBalance;
-    
-    [SerializeField] private BoardLocation currentSpace;
-
-    void Start()
+    private string playerName;
+    public void SetPlayerName(string playerName)
     {
-        StartCoroutine(MoveSpaces(UnityEngine.Random.Range(7, 25)));
+        this.playerName = playerName;
+    }
+
+    private bool isAI = false;
+    public void SetIsAI(bool isAI)
+    {
+        this.isAI = isAI;
+    }
+    
+    // Money
+    private int accountBalance = 1500;
+
+    public void AdjustBalanceBy(int balance)
+    {
+        accountBalance += balance;
+    }
+
+    public int GetBalance()
+    {
+        return accountBalance;
+    }
+    
+    private BoardLocation currentSpace;
+
+    public void Initialize()
+    {
+        currentSpace = PassGo.instance;
     }
     
     public IEnumerator MoveSpaces(int spaces)
@@ -23,6 +45,9 @@ public class Player : MonoBehaviour
         for (int i = 0; i < spaces; i++)
         {
             BoardLocation targetSpace = movingForward ? currentSpace.next : currentSpace.preceding;
+            
+            if (targetSpace == null)
+                throw new Exception("What the actual fucking piece of goddamn shit");
             
             currentSpace.PassBy(this);
             
@@ -75,8 +100,6 @@ public class Player : MonoBehaviour
         }
         
         // Tell the space we ended on that we landed on it.  
-        currentSpace.LandOn(this);
-
-        yield return null;
+        yield return currentSpace.LandOn(this);
     }
 }

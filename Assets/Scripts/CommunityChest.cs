@@ -9,8 +9,10 @@ public class CommunityChest : BoardLocation
         Debug.Log("Passed by community chest");
     }
 
-    public override void LandOn(Player player)
+    public override IEnumerator LandOn(Player player)
     {
         Debug.Log("Landed on community chest");
+
+        yield return null;
     }
 }
