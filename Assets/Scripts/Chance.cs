@@ -9,7 +9,7 @@ public class Chance : BoardLocation
         Debug.Log("Passed by Chance");
     }
 
-    public override IEnumerator LandOn(Player player)
+    protected override IEnumerator PropertySpecificActions(Player player)
     {
         Debug.Log("Landed on Chance");
 

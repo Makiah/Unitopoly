@@ -13,24 +13,29 @@ public class CameraController : MonoBehaviour
         instance = this;
     }
 
-    public IEnumerator LerpToViewBoardTarget()
+    public IEnumerator LerpToCameraViewTargets(Vector3 position, Vector3 eulerAngles, float totalTime)
     {
-        float totalLerpTime = 5f, startTime = Time.time;
+        float startTime = Time.time;
         Vector3 initialPosition = transform.position;
-        Quaternion initialRotation = transform.rotation;
+        Vector3 initialRotation = transform.eulerAngles;
 
         float progressionCoefficient = 0f;
         while (progressionCoefficient < .98f)
         {
-            progressionCoefficient = (Time.time - startTime) / totalLerpTime;
+            progressionCoefficient = (Time.time - startTime) / totalTime;
 
-            transform.position = Vector3.Lerp(initialPosition, gameViewTarget.transform.position, progressionCoefficient);
-            transform.rotation = Quaternion.Lerp(initialRotation, gameViewTarget.transform.rotation, progressionCoefficient);
+            transform.position = Vector3.Lerp(initialPosition, position, progressionCoefficient);
+            transform.eulerAngles = Vector3.Lerp(initialRotation, eulerAngles, progressionCoefficient);
 
             yield return null;
         }
 
-        transform.position = gameViewTarget.transform.position;
-        transform.rotation = gameViewTarget.transform.rotation;
+        transform.position = position;
+        transform.eulerAngles = eulerAngles;
+    }
+
+    public IEnumerator LerpToViewBoardTarget(float totalTime)
+    {
+        yield return LerpToCameraViewTargets(gameViewTarget.transform.position, gameViewTarget.transform.eulerAngles, totalTime);
     }
 }

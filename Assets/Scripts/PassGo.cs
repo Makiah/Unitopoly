@@ -15,7 +15,7 @@ public class PassGo : BoardLocation
     {
     }
 
-    public override IEnumerator LandOn(Player player)
+    protected override IEnumerator PropertySpecificActions(Player player)
     {
         yield return null;
     }

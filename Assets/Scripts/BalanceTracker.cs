@@ -5,15 +5,21 @@ using UnityEngine.UI;
 
 public class BalanceTracker : MonoBehaviour
 {
-    private Text text;
+    private Text balanceField, nameField;
 
     void Awake()
     {
-        text = transform.Find("Text").GetComponent<Text>();
+        balanceField = transform.Find("Text").GetComponent<Text>();
+        nameField = transform.Find("Panel").Find("Text").GetComponent<Text>();
     }
 
     public void UpdateBalance(int balance)
     {
-        this.text.text = "" + balance;
+        this.balanceField.text = "" + balance;
+    }
+
+    public void UpdateName(string newName)
+    {
+        nameField.text = newName;
     }
 }

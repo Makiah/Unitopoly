@@ -9,7 +9,7 @@ public class CommunityChest : BoardLocation
         Debug.Log("Passed by community chest");
     }
 
-    public override IEnumerator LandOn(Player player)
+    protected override IEnumerator PropertySpecificActions(Player player)
     {
         Debug.Log("Landed on community chest");
 

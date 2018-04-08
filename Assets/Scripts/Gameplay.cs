@@ -62,7 +62,7 @@ public class Gameplay : MonoBehaviour
 
     private IEnumerator PlayGame()
     {
-        yield return CameraController.instance.LerpToViewBoardTarget();
+        yield return CameraController.instance.LerpToViewBoardTarget(5f);
         
         // Simulate taking 16 turns.  
         for (int i = 0; i < 16; i++)

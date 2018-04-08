@@ -27,7 +27,18 @@ public abstract class BoardLocation : MonoBehaviour
     
     // Player instances call this when they pass by this space.  
     public abstract void PassBy(Player player);
+
+    public IEnumerator LandOn(Player player)
+    {
+        // Show the player a close up of the property they landed on.  
+        yield return CameraController.instance.LerpToCameraViewTargets(transform.position + new Vector3(0, 3, 0),
+            transform.eulerAngles, 2f);
+
+        yield return PropertySpecificActions(player);
+
+        yield return CameraController.instance.LerpToViewBoardTarget(2f);
+    }
     
     // Player instances `yield return` this when they land on this space.  
-    public abstract IEnumerator LandOn(Player player);
+    protected abstract IEnumerator PropertySpecificActions(Player player);
 }

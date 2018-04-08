@@ -9,7 +9,7 @@ public class GoToJail : BoardLocation
         throw new System.NotImplementedException();
     }
 
-    public override IEnumerator LandOn(Player player)
+    protected override IEnumerator PropertySpecificActions(Player player)
     {
         throw new System.NotImplementedException();
     }

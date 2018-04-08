@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public void SetBalanceTracker(BalanceTracker balanceTracker)
     {
         this.balanceTracker = balanceTracker;
+        
+        this.balanceTracker.UpdateName(playerName);
     }
     
     // Money
