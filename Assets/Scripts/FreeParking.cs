@@ -10,6 +10,7 @@ public class FreeParking : BoardLocation
 
     protected override IEnumerator PropertySpecificActions(Player player)
     {       
-        yield return null;
+        yield return MessageAlert.instance.DisplayAlert("You got M20 for landing on Free Parking!", Color.cyan);
+        player.AdjustBalanceBy(20);
     }
 }

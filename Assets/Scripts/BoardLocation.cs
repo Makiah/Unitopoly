@@ -32,11 +32,11 @@ public abstract class BoardLocation : MonoBehaviour
     {
         // Show the player a close up of the property they landed on.  
         yield return CameraController.instance.LerpToCameraViewTargets(transform.position + new Vector3(0, 3, 0),
-            transform.eulerAngles, 2f);
+            transform.eulerAngles, 1.2f);
 
         yield return PropertySpecificActions(player);
 
-        yield return CameraController.instance.LerpToViewBoardTarget(2f);
+        yield return CameraController.instance.LerpToViewBoardTarget(1f);
     }
     
     // Player instances `yield return` this when they land on this space.  

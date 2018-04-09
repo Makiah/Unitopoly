@@ -1191,7 +1191,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 71d9109fdb0a047aebe5ddd77a2e180b, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1
@@ -1953,19 +1953,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 240120984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5784203f5ec4eb4a01cf979f134361, type: 3}
+  m_Script: {fileID: 11500000, guid: 3340ef68af4da475d8c4702ca99f76bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preceding: {fileID: 0}
   next: {fileID: 0}
-  propertyName: 
-  purchasePrices: 000000000000000000000000000000000000000000000000
-  rentPrices: 000000000000000000000000000000000000000000000000
-  mortgageValue: 0
-  sameColorProperties:
-  - {fileID: 0}
-  - {fileID: 0}
-  ownedBy: {fileID: 0}
+  railroadName: Marylebone Station
+  purchasePrice: 200
+  otherRailroads:
+  - {fileID: 1351693751}
+  - {fileID: 1189629615}
+  - {fileID: 763436683}
 --- !u!1 &241211944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,6 +2083,7 @@ GameObject:
   - component: {fileID: 245840988}
   - component: {fileID: 245840987}
   - component: {fileID: 245840986}
+  - component: {fileID: 245840989}
   m_Layer: 0
   m_Name: 38
   m_TagString: Untagged
@@ -2160,6 +2159,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 245840984}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &245840989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245840984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268e3bdb6c92c45d786947160784f7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preceding: {fileID: 0}
+  next: {fileID: 0}
 --- !u!1 &270985436
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,7 +3799,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1145025531}
-        m_MethodName: Purchase
+        m_MethodName: Affirmative
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4426,19 +4438,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 763436678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5784203f5ec4eb4a01cf979f134361, type: 3}
+  m_Script: {fileID: 11500000, guid: 3340ef68af4da475d8c4702ca99f76bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preceding: {fileID: 0}
   next: {fileID: 0}
-  propertyName: 
-  purchasePrices: 000000000000000000000000000000000000000000000000
-  rentPrices: 000000000000000000000000000000000000000000000000
-  mortgageValue: 0
-  sameColorProperties:
-  - {fileID: 0}
-  - {fileID: 0}
-  ownedBy: {fileID: 0}
+  railroadName: Liverpool St. Station
+  purchasePrice: 200
+  otherRailroads:
+  - {fileID: 1351693751}
+  - {fileID: 240120989}
+  - {fileID: 1189629615}
 --- !u!1 &799004112
 GameObject:
   m_ObjectHideFlags: 0
@@ -4494,7 +4504,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 71d9109fdb0a047aebe5ddd77a2e180b, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
@@ -6250,19 +6260,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189629610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5784203f5ec4eb4a01cf979f134361, type: 3}
+  m_Script: {fileID: 11500000, guid: 3340ef68af4da475d8c4702ca99f76bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preceding: {fileID: 0}
   next: {fileID: 0}
-  propertyName: 
-  purchasePrices: 000000000000000000000000000000000000000000000000
-  rentPrices: 000000000000000000000000000000000000000000000000
-  mortgageValue: 0
-  sameColorProperties:
-  - {fileID: 0}
-  - {fileID: 0}
-  ownedBy: {fileID: 0}
+  railroadName: Fenchurch St. Station
+  purchasePrice: 200
+  otherRailroads:
+  - {fileID: 1351693751}
+  - {fileID: 240120989}
+  - {fileID: 763436683}
 --- !u!1 &1193525478
 GameObject:
   m_ObjectHideFlags: 0
@@ -7027,19 +7035,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1351693746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5784203f5ec4eb4a01cf979f134361, type: 3}
+  m_Script: {fileID: 11500000, guid: 3340ef68af4da475d8c4702ca99f76bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preceding: {fileID: 0}
   next: {fileID: 0}
-  propertyName: 
-  purchasePrices: 000000000000000000000000000000000000000000000000
-  rentPrices: 000000000000000000000000000000000000000000000000
-  mortgageValue: 0
-  sameColorProperties:
-  - {fileID: 0}
-  - {fileID: 0}
-  ownedBy: {fileID: 0}
+  railroadName: Kings Cross Station
+  purchasePrice: 200
+  otherRailroads:
+  - {fileID: 240120989}
+  - {fileID: 1189629615}
+  - {fileID: 763436683}
 --- !u!1 &1358084351
 GameObject:
   m_ObjectHideFlags: 0
@@ -7433,7 +7439,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 71d9109fdb0a047aebe5ddd77a2e180b, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
@@ -8012,7 +8018,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1145025531}
-        m_MethodName: Auction
+        m_MethodName: Negative
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9641,7 +9647,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 71d9109fdb0a047aebe5ddd77a2e180b, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
@@ -10797,7 +10803,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 71d9109fdb0a047aebe5ddd77a2e180b, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1
@@ -11586,16 +11592,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2141389032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5784203f5ec4eb4a01cf979f134361, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c2cbbd91080a405b885b90cfd4be8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   preceding: {fileID: 0}
   next: {fileID: 0}
-  propertyName: 
-  purchasePrices: 000000000000000000000000000000000000000000000000
-  rentPrices: 000000000000000000000000000000000000000000000000
-  mortgageValue: 0
-  sameColorProperties:
-  - {fileID: 0}
-  - {fileID: 0}
-  ownedBy: {fileID: 0}

@@ -10,6 +10,7 @@ public class SuperTax : BoardLocation
 
     protected override IEnumerator PropertySpecificActions(Player player)
     {
-        yield return null;
+        yield return MessageAlert.instance.DisplayAlert("Super Tax!  Pay M100.", Color.red);
+        player.AdjustBalanceBy(-100);
     }
 }

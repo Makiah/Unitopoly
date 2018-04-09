@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
         this.playerName = playerName;
     }
 
+    // Incremented by PassGo.  
+    public int timesPastGo = 0;
+
     private bool isAI = false;
     public void SetIsAI(bool isAI)
     {
@@ -45,6 +48,52 @@ public class Player : MonoBehaviour
     {
         currentSpace = PassGo.instance;
     }
+
+    public IEnumerator RotateAdditionalDegrees(float additionalDegrees, float timeForRotate)
+    {
+        float progressionCoefficient = 0;
+        float startTime = Time.time;
+        float startAngle = transform.eulerAngles.y;
+                
+        while (progressionCoefficient <= .98f)
+        {
+            progressionCoefficient = (Time.time - startTime) / timeForRotate;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, startAngle + additionalDegrees * progressionCoefficient, transform.eulerAngles.z);
+
+            yield return null;
+        }
+                
+        // Finalize rotation.  
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, startAngle + additionalDegrees, transform.eulerAngles.z);
+    }
+
+    public IEnumerator JumpToSpace(BoardLocation space, float timeForJump)
+    {
+        float startTime = Time.time;
+
+        Vector3 startPosition = transform.position; // not current space position because we might start abnormally.  
+        Vector3 endPosition = space.gameObject.transform.position;
+
+        Vector3 desiredDisplacement = endPosition - startPosition;
+        desiredDisplacement.y = 0;
+
+        float progressionCoefficient = 0;
+        while (progressionCoefficient <= .98f)
+        {
+            progressionCoefficient = (Time.time - startTime) / timeForJump;
+                
+            Vector3 newPosition = startPosition + desiredDisplacement * progressionCoefficient;
+            newPosition.y = -1 * Mathf.Pow(progressionCoefficient - 0.5f, 2) + 0.25f;
+
+            transform.position = newPosition;
+
+            yield return null;
+        }
+            
+        // Onto the next space!
+        currentSpace = space;
+        transform.position = currentSpace.transform.position;
+    }
     
     public IEnumerator MoveSpaces(int spaces)
     {   
@@ -58,50 +107,14 @@ public class Player : MonoBehaviour
             currentSpace.PassBy(this);
             
             float timeForJump = .9f * (Mathf.Sqrt((i * 1.0f) / spaces + .8f) - .35f);
-            float startTime = Time.time;
 
-            Vector3 startPosition = currentSpace.gameObject.transform.position;
-            Vector3 endPosition = targetSpace.gameObject.transform.position;
-
-            Vector3 desiredDisplacement = endPosition - startPosition;
-            desiredDisplacement.y = 0;
-
-            float progressionCoefficient = 0;
-            while (progressionCoefficient <= .98f)
-            {
-                progressionCoefficient = (Time.time - startTime) / timeForJump;
-                
-                Vector3 newPosition = startPosition + desiredDisplacement * progressionCoefficient;
-                newPosition.y = -1 * Mathf.Pow(progressionCoefficient - 0.5f, 2) + 0.25f;
-
-                transform.position = newPosition;
-
-                yield return null;
-            }
-            
-            // Onto the next space!
-            currentSpace = targetSpace;
-            transform.position = currentSpace.transform.position;
+            yield return JumpToSpace(targetSpace, timeForJump);
             
             // Rotate if we're on a corner space.  
             if (currentSpace is PassGo || currentSpace is GoToJail || currentSpace is InJail ||
                 currentSpace is FreeParking)
             {
-                progressionCoefficient = 0;
-                startTime = Time.time;
-                float timeForRotate = 1f;
-                float startAngle = transform.eulerAngles.y;
-                
-                while (progressionCoefficient <= .98f)
-                {
-                    progressionCoefficient = (Time.time - startTime) / timeForRotate;
-                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, startAngle + 90 * progressionCoefficient, transform.eulerAngles.z);
-
-                    yield return null;
-                }
-                
-                // Finalize rotation.  
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, startAngle + 90, transform.eulerAngles.z);
+                yield return RotateAdditionalDegrees(movingForward ? 90 : -90, 1f);
             }
         }
         

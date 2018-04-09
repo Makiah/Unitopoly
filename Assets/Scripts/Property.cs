@@ -48,6 +48,8 @@ public class Property : BoardLocation
             else
             {
                 yield return MessageAlert.instance.DisplayAlert("Rent owed: M" + rentPrices[currentUpgradeLevel], Color.red);
+                player.AdjustBalanceBy(-rentPrices[currentUpgradeLevel]);
+                ownedBy.AdjustBalanceBy(rentPrices[currentUpgradeLevel]);
             }
         }
     }

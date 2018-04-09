@@ -10,6 +10,7 @@ public class IncomeTax : BoardLocation
 
     protected override IEnumerator PropertySpecificActions(Player player)
     {
-        yield return null;
+        yield return MessageAlert.instance.DisplayAlert("Income tax!  Pay M200.", Color.red);
+        player.AdjustBalanceBy(-200);
     }
 }

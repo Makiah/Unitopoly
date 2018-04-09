@@ -6,11 +6,13 @@ public class GoToJail : BoardLocation
 {
     public override void PassBy(Player player)
     {
-        throw new System.NotImplementedException();
     }
 
     protected override IEnumerator PropertySpecificActions(Player player)
     {
-        throw new System.NotImplementedException();
+        yield return MessageAlert.instance.DisplayAlert("Uh oh...", Color.red);
+
+        yield return player.JumpToSpace(InJail.instance, 2f);
+        yield return player.RotateAdditionalDegrees(180, 1f);
     }
 }

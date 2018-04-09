@@ -13,6 +13,10 @@ public class PassGo : BoardLocation
     
     public override void PassBy(Player player)
     {
+        player.timesPastGo++;
+
+        if (player.timesPastGo > 1)
+            player.AdjustBalanceBy(200);
     }
 
     protected override IEnumerator PropertySpecificActions(Player player)
