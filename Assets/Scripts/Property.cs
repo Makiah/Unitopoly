@@ -18,6 +18,12 @@ public class Property : BoardLocation
 
     protected override IEnumerator PropertySpecificActions(Player player)
     {
-        yield return PropertyPurchaser.instance.SuggestNewPurchase(player, this);
+        yield return ChoiceAlert.instance.SuggestNewPurchase(this);
+
+        if (ChoiceAlert.instance.resultingDecision)
+        {
+            ownedBy = player;
+            player.AdjustBalanceBy(-propertyPurchasePrice);
+        }
     }
 }

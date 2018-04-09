@@ -55,9 +55,6 @@ public class Player : MonoBehaviour
         {
             BoardLocation targetSpace = movingForward ? currentSpace.next : currentSpace.preceding;
             
-            if (targetSpace == null)
-                throw new Exception("What the actual fucking piece of goddamn shit");
-            
             currentSpace.PassBy(this);
             
             float timeForJump = .9f * (Mathf.Sqrt((i * 1.0f) / spaces + .8f) - .35f);
