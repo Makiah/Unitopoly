@@ -812,11 +812,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Leicester Square
-  propertyPurchasePrice: 260
+  purchasePrices: 040100009600000096000000960000009600000096000000
+  rentPrices: 160000006e0000004a01000020030000cf0300007e040000
+  mortgageValue: 150
   sameColorProperties:
   - {fileID: 1460053413}
   - {fileID: 1382217127}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!4 &67389258 stripped
 Transform:
@@ -924,11 +925,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Bow Street
-  propertyPurchasePrice: 180
+  purchasePrices: b40000006400000064000000640000006400000064000000
+  rentPrices: 0e00000046000000c800000026020000ee020000b6030000
+  mortgageValue: 90
   sameColorProperties:
   - {fileID: 1021592188}
   - {fileID: 241211949}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &84022061
 GameObject:
@@ -1451,10 +1453,11 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Old Kent Road
-  propertyPurchasePrice: 60
+  purchasePrices: 3c0000001e0000001e0000001e0000001e0000001e000000
+  rentPrices: 020000000a0000001e0000005a000000a0000000fa000000
+  mortgageValue: 50
   sameColorProperties:
   - {fileID: 1242092528}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &153934236
 GameObject:
@@ -1557,11 +1560,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Oxford Street
-  propertyPurchasePrice: 300
+  purchasePrices: 2c0100009600000096000000960000009600000096000000
+  rentPrices: 1a0000008200000086010000840300004c040000fb040000
+  mortgageValue: 200
   sameColorProperties:
   - {fileID: 746361622}
   - {fileID: 443785879}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &156020096
 GameObject:
@@ -1955,11 +1959,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: 
-  propertyPurchasePrice: 0
+  purchasePrices: 000000000000000000000000000000000000000000000000
+  rentPrices: 000000000000000000000000000000000000000000000000
+  mortgageValue: 0
   sameColorProperties:
   - {fileID: 0}
   - {fileID: 0}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &241211944
 GameObject:
@@ -2062,11 +2067,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Vine Street
-  propertyPurchasePrice: 200
+  purchasePrices: c80000006400000064000000640000006400000064000000
+  rentPrices: 1000000050000000dc0000005802000020030000e8030000
+  mortgageValue: 100
   sameColorProperties:
   - {fileID: 1021592188}
   - {fileID: 83136505}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &245840984
 GameObject:
@@ -2255,11 +2261,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Northumrl'd Avenue
-  propertyPurchasePrice: 160
+  purchasePrices: a00000006400000064000000640000006400000064000000
+  rentPrices: 0c0000003c000000b4000000f4010000bc02000084030000
+  mortgageValue: 80
   sameColorProperties:
   - {fileID: 876638173}
   - {fileID: 1710297279}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &304311920
 GameObject:
@@ -2517,11 +2524,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Pentonville Road
-  propertyPurchasePrice: 120
+  purchasePrices: 780000003200000032000000320000003200000032000000
+  rentPrices: 0800000028000000640000002c010000c201000058020000
+  mortgageValue: 60
   sameColorProperties:
   - {fileID: 1552839279}
   - {fileID: 1482267332}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &350997899
 GameObject:
@@ -2624,11 +2632,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: 
-  propertyPurchasePrice: 0
+  purchasePrices: 000000000000000000000000000000000000000000000000
+  rentPrices: 000000000000000000000000000000000000000000000000
+  mortgageValue: 0
   sameColorProperties:
   - {fileID: 0}
   - {fileID: 0}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &366756923
 GameObject:
@@ -2886,10 +2895,11 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Mayfair
-  propertyPurchasePrice: 400
+  purchasePrices: 90010000c8000000c8000000c8000000c8000000c8000000
+  rentPrices: 32000000c80000005802000078050000a4060000d0070000
+  mortgageValue: 200
   sameColorProperties:
   - {fileID: 458628963}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &419978496
 GameObject:
@@ -3140,11 +3150,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Bond Street
-  propertyPurchasePrice: 320
+  purchasePrices: 40010000a0000000a0000000a0000000a0000000a0000000
+  rentPrices: 1c00000096000000c2010000e8030000b004000078050000
+  mortgageValue: 200
   sameColorProperties:
   - {fileID: 746361622}
   - {fileID: 153934241}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &449708260
 GameObject:
@@ -3247,11 +3258,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Water Works
-  propertyPurchasePrice: 150
+  purchasePrices: 000000000000000000000000000000000000000000000000
+  rentPrices: 000000000000000000000000000000000000000000000000
+  mortgageValue: 0
   sameColorProperties:
   - {fileID: 0}
   - {fileID: 0}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &458628958
 GameObject:
@@ -3354,10 +3366,11 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Park Lane
-  propertyPurchasePrice: 350
+  purchasePrices: 5e010000c8000000c8000000c8000000c8000000c8000000
+  rentPrices: 23000000af000000f40100004c04000014050000dc050000
+  mortgageValue: 175
   sameColorProperties:
   - {fileID: 378026700}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &465167994
 GameObject:
@@ -3696,6 +3709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: {fileID: 1956572970}
+  okButton: {fileID: 1736972011}
 --- !u!1 &612901294
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,11 +4216,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Trafalgar Square
-  propertyPurchasePrice: 240
+  purchasePrices: f00000009600000096000000960000009600000096000000
+  rentPrices: 14000000640000002c010000ee0200009d0300004c040000
+  mortgageValue: 120
   sameColorProperties:
   - {fileID: 1308763204}
   - {fileID: 1514999681}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &746361617
 GameObject:
@@ -4309,11 +4324,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Regent Street
-  propertyPurchasePrice: 300
+  purchasePrices: 2c0100009600000096000000960000009600000096000000
+  rentPrices: 1a0000008200000086010000840300004c040000fb040000
+  mortgageValue: 200
   sameColorProperties:
   - {fileID: 153934241}
   - {fileID: 443785879}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &763436678
 GameObject:
@@ -4416,11 +4432,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: 
-  propertyPurchasePrice: 0
+  purchasePrices: 000000000000000000000000000000000000000000000000
+  rentPrices: 000000000000000000000000000000000000000000000000
+  mortgageValue: 0
   sameColorProperties:
   - {fileID: 0}
   - {fileID: 0}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &799004112
 GameObject:
@@ -5052,11 +5069,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Whitehall
-  propertyPurchasePrice: 140
+  purchasePrices: 8c0000006400000064000000640000006400000064000000
+  rentPrices: 0a0000003200000096000000c201000071020000ee020000
+  mortgageValue: 70
   sameColorProperties:
   - {fileID: 270985441}
   - {fileID: 1710297279}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &900208735
 GameObject:
@@ -5443,11 +5461,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Marlborough Street
-  propertyPurchasePrice: 180
+  purchasePrices: b40000006400000064000000640000006400000064000000
+  rentPrices: 0e00000046000000c800000026020000ee020000b6030000
+  mortgageValue: 90
   sameColorProperties:
   - {fileID: 241211949}
   - {fileID: 83136505}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1030568874
 GameObject:
@@ -6055,9 +6074,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4c0ea281b49454eba6dffd0c57c628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  purchaseDialog: {fileID: 95512369}
-  purchaseDecided: 0
-  purchaseDecision: 0
+  choiceDialog: {fileID: 95512369}
+  affirmative: {fileID: 612901296}
+  negative: {fileID: 1478760889}
+  affirmativeText: {fileID: 1424041267}
+  negativeText: {fileID: 1723354709}
+  decisionMade: 0
+  resultingDecision: 0
 --- !u!1 &1175278224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,11 +6256,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: 
-  propertyPurchasePrice: 0
+  purchasePrices: 000000000000000000000000000000000000000000000000
+  rentPrices: 000000000000000000000000000000000000000000000000
+  mortgageValue: 0
   sameColorProperties:
   - {fileID: 0}
   - {fileID: 0}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1193525478
 GameObject:
@@ -6482,10 +6506,11 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Whitechapel Road
-  propertyPurchasePrice: 60
+  purchasePrices: 3c0000001e0000001e0000001e0000001e0000001e000000
+  rentPrices: 04000000140000003c000000b400000068010000c2010000
+  mortgageValue: 50
   sameColorProperties:
   - {fileID: 133543591}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1259848950
 GameObject:
@@ -6763,11 +6788,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Fleet Street
-  propertyPurchasePrice: 220
+  purchasePrices: dc0000009600000096000000960000009600000096000000
+  rentPrices: 120000005a000000fa000000bc0200006b0300001a040000
+  mortgageValue: 110
   sameColorProperties:
-  - {fileID: 743161784}
+  - {fileID: 1308763204}
   - {fileID: 1514999681}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1320162449
 GameObject:
@@ -7007,11 +7033,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: 
-  propertyPurchasePrice: 0
+  purchasePrices: 000000000000000000000000000000000000000000000000
+  rentPrices: 000000000000000000000000000000000000000000000000
+  mortgageValue: 0
   sameColorProperties:
   - {fileID: 0}
   - {fileID: 0}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1358084351
 GameObject:
@@ -7161,11 +7188,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Piccadilly
-  propertyPurchasePrice: 280
+  purchasePrices: 180100008c0000008c0000008c0000008c0000008c000000
+  rentPrices: 1600000078000000680100005203000001040000b0040000
+  mortgageValue: 150
   sameColorProperties:
   - {fileID: 1460053413}
   - {fileID: 56784006}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1396920342
 GameObject:
@@ -7732,11 +7760,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Coventry Street
-  propertyPurchasePrice: 260
+  purchasePrices: 040100009600000096000000960000009600000096000000
+  rentPrices: 160000006e0000004a01000020030000cf0300007e040000
+  mortgageValue: 150
   sameColorProperties:
   - {fileID: 1382217127}
   - {fileID: 56784006}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1460379430
 GameObject:
@@ -8129,11 +8158,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: The Angel, Islington
-  propertyPurchasePrice: 100
+  purchasePrices: 640000003200000032000000320000003200000032000000
+  rentPrices: 060000001e0000005a0000000e0100009001000026020000
+  mortgageValue: 50
   sameColorProperties:
   - {fileID: 1552839279}
   - {fileID: 325284967}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1514999676
 GameObject:
@@ -8236,11 +8266,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Strand
-  propertyPurchasePrice: 220
+  purchasePrices: dc0000009600000096000000960000009600000096000000
+  rentPrices: 120000005a000000fa000000bc0200006b0300001a040000
+  mortgageValue: 110
   sameColorProperties:
   - {fileID: 1308763204}
   - {fileID: 743161784}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1525378982
 GameObject:
@@ -8701,11 +8732,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Euston Road
-  propertyPurchasePrice: 100
+  purchasePrices: 640000003200000032000000320000003200000032000000
+  rentPrices: 060000001e0000005a0000000e0100009001000026020000
+  mortgageValue: 50
   sameColorProperties:
   - {fileID: 325284967}
   - {fileID: 1482267332}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1578120311
 GameObject:
@@ -9547,11 +9579,12 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: Pall Mall
-  propertyPurchasePrice: 140
+  purchasePrices: 8c0000006400000064000000640000006400000064000000
+  rentPrices: 0a0000003200000096000000c201000071020000ee020000
+  mortgageValue: 70
   sameColorProperties:
   - {fileID: 876638173}
   - {fileID: 270985441}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}
 --- !u!1 &1723354707
 GameObject:
@@ -11559,9 +11592,10 @@ MonoBehaviour:
   preceding: {fileID: 0}
   next: {fileID: 0}
   propertyName: 
-  propertyPurchasePrice: 0
+  purchasePrices: 000000000000000000000000000000000000000000000000
+  rentPrices: 000000000000000000000000000000000000000000000000
+  mortgageValue: 0
   sameColorProperties:
   - {fileID: 0}
   - {fileID: 0}
-  constructionPrices: 0000000000000000000000000000000000000000
   ownedBy: {fileID: 0}

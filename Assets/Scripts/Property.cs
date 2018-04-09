@@ -5,10 +5,19 @@ using UnityEngine;
 
 public class Property : BoardLocation
 {
-    [SerializeField] public String propertyName = "";
-    [SerializeField] public int propertyPurchasePrice;
+    [SerializeField] private String propertyName = "";
+
+    [Tooltip("These are cumulative, don't write total price")]
+    [SerializeField] private int[] purchasePrices = new int[6];
+    
+    [Tooltip("These are NOT cumulative, write total price")]
+    [SerializeField] private int[] rentPrices = new int[6];
+
+    [SerializeField] private int mortgageValue;
+    
     [SerializeField] private Property[] sameColorProperties;
-    [SerializeField] private int[] constructionPrices = new int[5];
+
+    private int currentUpgradeLevel;
 
     [HideInInspector] public Player ownedBy = null;
     
@@ -18,12 +27,28 @@ public class Property : BoardLocation
 
     protected override IEnumerator PropertySpecificActions(Player player)
     {
-        yield return ChoiceAlert.instance.SuggestNewPurchase(this);
-
-        if (ChoiceAlert.instance.resultingDecision)
+        if (ownedBy == null)
         {
-            ownedBy = player;
-            player.AdjustBalanceBy(-propertyPurchasePrice);
+            yield return ChoiceAlert.instance.CreateChoiceAlert("Buy " + propertyName + "?",
+                Color.green, "M" + purchasePrices[0],
+                Color.yellow, "Nope");
+
+            if (ChoiceAlert.instance.resultingDecision)
+            {
+                ownedBy = player;
+                player.AdjustBalanceBy(-purchasePrices[0]);
+            }
+        }
+        else
+        {
+            if (ownedBy == player)
+            {
+                yield return MessageAlert.instance.DisplayAlert("You own this property!", Color.green);
+            }
+            else
+            {
+                yield return MessageAlert.instance.DisplayAlert("Rent owed: M" + rentPrices[currentUpgradeLevel], Color.red);
+            }
         }
     }
 }
