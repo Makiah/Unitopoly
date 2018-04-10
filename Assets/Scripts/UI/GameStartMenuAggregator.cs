@@ -8,7 +8,6 @@ public class GameStartMenuAggregator : MonoBehaviour
     [SerializeField] private InputField[] selectionPanels = new InputField[4];
     [SerializeField] private Toggle[] aiToggles = new Toggle[4];
     [SerializeField] private GameObject selectionPanel3Parent, selectionPanel4Parent;
-    [SerializeField] private Canvas gameUI;
 
     private string GetNameFromCreationPanel(int num, InputField nameField, Toggle aiToggle)
     {
@@ -31,12 +30,11 @@ public class GameStartMenuAggregator : MonoBehaviour
                 continue;
             }
             
-            Gameplay.instance.RegisterNewPlayer(GetNameFromCreationPanel(i, selectionPanels[i], aiToggles[i]), aiToggles[i]);
+            Gameplay.instance.RegisterNewPlayer(GetNameFromCreationPanel(i, selectionPanels[i], aiToggles[i]), aiToggles[i].isOn);
         }
         
         Gameplay.instance.StartGame();
         
-        gameUI.gameObject.SetActive(true);
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

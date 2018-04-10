@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
     {
         this.isAI = isAI;
     }
+    public bool IsAI()
+    {
+        return isAI;
+    }
 
     private BalanceTracker balanceTracker;
     public void SetBalanceTracker(BalanceTracker balanceTracker)

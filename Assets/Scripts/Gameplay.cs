@@ -64,14 +64,58 @@ public class Gameplay : MonoBehaviour
     {
         yield return CameraController.instance.LerpToViewBoardTarget(5f);
         
-        // Simulate taking 16 turns.  
-        for (int i = 0; i < 16; i++)
+        // Simulate taking turns.  
+        for (int i = 0; i < 35; i++)
         {
             foreach (Player player in players)
-            {
-                yield return DieRoller.instance.RollDie();
-                int[] dieRollResults = DieRoller.instance.GetDieRollResults();
-                yield return player.MoveSpaces(dieRollResults.Sum());
+            {   
+                bool doubles = true;
+                int doubleRolls = 0;
+                while (doubles)
+                {
+                    if (!player.IsAI())
+                    {   
+                        TurnActions.UserAction chosenAction = TurnActions.UserAction.UNDECIDED;
+                        while (chosenAction != TurnActions.UserAction.ROLL)
+                        {
+                            yield return TurnActions.instance.GetUserInput(true);
+                            chosenAction = TurnActions.instance.GetChosenAction();
+
+                            if (chosenAction != TurnActions.UserAction.ROLL)
+                            {
+                                Debug.LogError("Not implemented >:(");
+                                yield return new WaitForSeconds(2);
+                            }
+                        }
+                    }
+
+                    // Roll dies.  
+                    yield return DieRoller.instance.RollDie();
+                    int[] dieRollResults = DieRoller.instance.GetDieRollResults();
+
+                    // Too many doubles 
+                    if (dieRollResults.Length != dieRollResults.Distinct().Count())
+                    {
+                        doubleRolls++;
+
+                        if (doubleRolls >= 3)
+                        {
+                            yield return player.JumpToSpace(InJail.instance, 1f);
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        doubles = false;
+                    }
+                        
+                    yield return player.MoveSpaces(dieRollResults.Sum());
+                }
+                
+                if (!player.IsAI())
+                {
+                    yield return TurnActions.instance.GetUserInput(false);
+                }
             }
         }
     }

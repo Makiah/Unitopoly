@@ -18,16 +18,25 @@ public abstract class Ownable : BoardLocation
     {
         if (owner == null)
         {
-            yield return LerpCameraViewToThisLocation();
-            yield return OwnablePurchaseDialog.instance.OfferPurchase(this);
-            
-            if (OwnablePurchaseDialog.instance.resultingDecision)
+            if (!player.IsAI())
             {
+                yield return LerpCameraViewToThisLocation();
+                yield return OwnablePurchaseDialog.instance.OfferPurchase(this);
+
+                if (OwnablePurchaseDialog.instance.resultingDecision)
+                {
+                    player.AdjustBalanceBy(-purchasePrice);
+                    owner = player;
+                }
+
+                yield return LerpCameraViewBackToMainBoardView();
+            }
+            else
+            {
+                // TODO more complex AI logic.  
                 player.AdjustBalanceBy(-purchasePrice);
                 owner = player;
             }
-            
-            yield return LerpCameraViewBackToMainBoardView();
         }
         else
         {
