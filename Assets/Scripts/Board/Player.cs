@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private static int instantiatedPlayers = 0;
+    
+    [HideInInspector] public List<Ownable> currentOwnables = new List<Ownable>();
+
+    [SerializeField] private Material[] playerColors;
+    
     private string playerName;
     public void SetPlayerName(string playerName)
     {
@@ -50,7 +56,9 @@ public class Player : MonoBehaviour
 
     public void Initialize()
     {
+        transform.GetChild(0).GetComponent<MeshRenderer>().sharedMaterial = playerColors[instantiatedPlayers];
         currentSpace = PassGo.instance;
+        instantiatedPlayers++;
     }
 
     public IEnumerator RotateAdditionalDegrees(float additionalDegrees, float timeForRotate)

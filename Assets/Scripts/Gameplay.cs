@@ -115,6 +115,19 @@ public class Gameplay : MonoBehaviour
                 if (!player.IsAI())
                 {
                     yield return TurnActions.instance.GetUserInput(false);
+                    TurnActions.UserAction chosenAction = TurnActions.UserAction.UNDECIDED;
+                    
+                    while (chosenAction != TurnActions.UserAction.ROLL)
+                    {
+                        yield return TurnActions.instance.GetUserInput(true);
+                        chosenAction = TurnActions.instance.GetChosenAction();
+
+                        if (chosenAction != TurnActions.UserAction.ROLL)
+                        {
+                            Debug.LogError("Not implemented >:(");
+                            yield return new WaitForSeconds(2);
+                        }
+                    }
                 }
             }
         }

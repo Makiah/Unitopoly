@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Ownable : BoardLocation
-{
+{   
     protected Player owner;
 
     [SerializeField] private string propertyName;
@@ -26,6 +26,7 @@ public abstract class Ownable : BoardLocation
                 if (OwnablePurchaseDialog.instance.resultingDecision)
                 {
                     player.AdjustBalanceBy(-purchasePrice);
+                    player.currentOwnables.Add(this);
                     owner = player;
                 }
 
@@ -35,6 +36,7 @@ public abstract class Ownable : BoardLocation
             {
                 // TODO more complex AI logic.  
                 player.AdjustBalanceBy(-purchasePrice);
+                player.currentOwnables.Add(this);
                 owner = player;
             }
         }
